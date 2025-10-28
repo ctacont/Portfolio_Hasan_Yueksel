@@ -48,21 +48,29 @@
     function checkCookieConsent() {
         const consent = getCookie(COOKIE_NAME);
         
+        console.log('Cookie Consent Check:', consent); // Debug log
+        
         if (!consent) {
             // Show banner after a short delay for better UX
+            console.log('No consent found, showing banner...'); // Debug log
             setTimeout(() => {
                 showCookieBanner();
             }, 1000);
         } else {
             // Apply saved preferences
+            console.log('Consent found, applying preferences...'); // Debug log
             applyCookiePreferences(consent);
         }
     }
 
     // Show Cookie Banner
     function showCookieBanner() {
+        console.log('Showing cookie banner...'); // Debug log
         if (cookieBanner) {
             cookieBanner.classList.add('show');
+            console.log('Banner should be visible now'); // Debug log
+        } else {
+            console.error('Cookie banner element not found!'); // Debug log
         }
     }
 
@@ -231,7 +239,19 @@
     });
 
     // Initialize on page load
-    document.addEventListener('DOMContentLoaded', checkCookieConsent);
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', checkCookieConsent);
+    } else {
+        // DOM already loaded
+        checkCookieConsent();
+    }
+
+    // Debug function to reset cookies (only for development)
+    window.resetCookieConsent = function() {
+        deleteCookie(COOKIE_NAME);
+        console.log('Cookie consent reset. Reload page to see banner again.');
+        location.reload();
+    };
 
     // Add CSS animations
     const style = document.createElement('style');
@@ -259,5 +279,7 @@
         }
     `;
     document.head.appendChild(style);
+
+    console.log('Cookie consent script loaded successfully'); // Debug log
 
 })();
