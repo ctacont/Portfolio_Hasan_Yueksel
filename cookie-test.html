@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Banner Test</title>
+    <link rel="stylesheet" href="assets/css/cookie-consent.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            background: #f5f5f5;
+        }
+        .test-controls {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        button {
+            background: #1e3a8a;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #1e40af;
+        }
+        #console-output {
+            background: #1f2937;
+            color: #10b981;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 12px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-controls">
+        <h1>🍪 Cookie Banner Test</h1>
+        <p>Nutze diese Buttons zum Testen:</p>
+        <button onclick="window.resetCookieConsent()">Cookie zurücksetzen & neu laden</button>
+        <button onclick="showBannerManually()">Banner manuell anzeigen</button>
+        <button onclick="checkCookies()">Cookies prüfen</button>
+        
+        <h3>Console Output:</h3>
+        <div id="console-output"></div>
+    </div>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookieConsent" class="cookie-consent">
+        <div class="cookie-consent-content">
+            <div class="cookie-consent-header">
+                <h3 class="cookie-consent-title">🍪 Cookie-Einstellungen</h3>
+                <button class="cookie-consent-close" id="closeCookieBanner" aria-label="Schließen">&times;</button>
+            </div>
+            <p class="cookie-consent-text">
+                Wir verwenden Cookies und ähnliche Technologien, um die Benutzerfreundlichkeit zu verbessern und unsere Website zu optimieren. 
+                Sie können Ihre Einwilligung jederzeit anpassen oder widerrufen.
+            </p>
+            
+            <div class="cookie-consent-options">
+                <div class="cookie-option">
+                    <div class="cookie-option-header">
+                        <label class="cookie-checkbox-label">
+                            <input type="checkbox" id="cookieEssential" checked disabled>
+                            <span class="cookie-checkbox-text">
+                                <strong>Notwendige Cookies</strong>
+                                <small>Diese Cookies sind für die Grundfunktionen der Website erforderlich.</small>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="cookie-option">
+                    <div class="cookie-option-header">
+                        <label class="cookie-checkbox-label">
+                            <input type="checkbox" id="cookieAnalytics">
+                            <span class="cookie-checkbox-text">
+                                <strong>Analyse-Cookies</strong>
+                                <small>Helfen uns zu verstehen, wie Besucher mit der Website interagieren.</small>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="cookie-option">
+                    <div class="cookie-option-header">
+                        <label class="cookie-checkbox-label">
+                            <input type="checkbox" id="cookieMarketing">
+                            <span class="cookie-checkbox-text">
+                                <strong>Marketing-Cookies</strong>
+                                <small>Werden verwendet, um relevante Werbung anzuzeigen.</small>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cookie-consent-actions">
+                <button id="acceptAllCookies" class="cookie-btn cookie-btn-primary">
+                    Alle akzeptieren
+                </button>
+                <button id="acceptSelectedCookies" class="cookie-btn cookie-btn-secondary">
+                    Auswahl speichern
+                </button>
+                <button id="rejectAllCookies" class="cookie-btn cookie-btn-tertiary">
+                    Alle ablehnen
+                </button>
+            </div>
+
+            <div class="cookie-consent-links">
+                <a href="#" class="open-datenschutz">Datenschutzerklärung</a>
+                <a href="#" class="open-impressum">Impressum</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Capture console.log
+        const consoleOutput = document.getElementById('console-output');
+        const originalLog = console.log;
+        const originalError = console.error;
+        
+        console.log = function(...args) {
+            originalLog.apply(console, args);
+            consoleOutput.innerHTML += '<div style="color: #10b981">✓ ' + args.join(' ') + '</div>';
+            consoleOutput.scrollTop = consoleOutput.scrollHeight;
+        };
+        
+        console.error = function(...args) {
+            originalError.apply(console, args);
+            consoleOutput.innerHTML += '<div style="color: #ef4444">✗ ' + args.join(' ') + '</div>';
+            consoleOutput.scrollTop = consoleOutput.scrollHeight;
+        };
+
+        function showBannerManually() {
+            const banner = document.getElementById('cookieConsent');
+            if (banner) {
+                banner.classList.add('show');
+                console.log('Banner manually shown');
+            } else {
+                console.error('Banner element not found');
+            }
+        }
+
+        function checkCookies() {
+            const cookies = document.cookie;
+            console.log('Current cookies:', cookies || 'None');
+        }
+    </script>
+    <script src="assets/js/cookie-consent.js"></script>
+</body>
+</html>
