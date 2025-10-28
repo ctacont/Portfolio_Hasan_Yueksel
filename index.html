@@ -23,6 +23,7 @@ github: https://github.com/ctacont/
     <link rel="stylesheet" href="assets/css/utilities.css">
     <link rel="stylesheet" href="assets/css/layout.css">
     <link rel="stylesheet" href="assets/css/modals_utility.css">
+    <link rel="stylesheet" href="assets/css/cookie-consent.css">
     
     <!-- Inline Styles for Modals and Utility Classes -->
     <style>
@@ -943,11 +944,7 @@ export function Counter() {
             </div>
         </div>
     </footer>
-    <!-- External JavaScript Files -->
-    <script src="assets/js/skills-data.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/slider.js"></script>
-    <script src="assets/js/modals.js"></script>
+    
 <!-- Skill Modal -->
     <div id="skillModal" class="skill-modal">
         <div class="skill-modal-content">
@@ -1075,6 +1072,81 @@ export function Counter() {
         </svg>
     </button>
 
+    <!-- Cookie Consent Banner -->
+    <div id="cookieConsent" class="cookie-consent">
+        <div class="cookie-consent-content">
+            <div class="cookie-consent-header">
+                <h3 class="cookie-consent-title">🍪 Cookie-Einstellungen</h3>
+                <button class="cookie-consent-close" id="closeCookieBanner" aria-label="Schließen">&times;</button>
+            </div>
+            <p class="cookie-consent-text">
+                Wir verwenden Cookies und ähnliche Technologien, um die Benutzerfreundlichkeit zu verbessern und unsere Website zu optimieren. 
+                Sie können Ihre Einwilligung jederzeit anpassen oder widerrufen.
+            </p>
+            
+            <div class="cookie-consent-options">
+                <div class="cookie-option">
+                    <div class="cookie-option-header">
+                        <label class="cookie-checkbox-label">
+                            <input type="checkbox" id="cookieEssential" checked disabled>
+                            <span class="cookie-checkbox-text">
+                                <strong>Notwendige Cookies</strong>
+                                <small>Diese Cookies sind für die Grundfunktionen der Website erforderlich.</small>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="cookie-option">
+                    <div class="cookie-option-header">
+                        <label class="cookie-checkbox-label">
+                            <input type="checkbox" id="cookieAnalytics">
+                            <span class="cookie-checkbox-text">
+                                <strong>Analyse-Cookies</strong>
+                                <small>Helfen uns zu verstehen, wie Besucher mit der Website interagieren.</small>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="cookie-option">
+                    <div class="cookie-option-header">
+                        <label class="cookie-checkbox-label">
+                            <input type="checkbox" id="cookieMarketing">
+                            <span class="cookie-checkbox-text">
+                                <strong>Marketing-Cookies</strong>
+                                <small>Werden verwendet, um relevante Werbung anzuzeigen.</small>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cookie-consent-actions">
+                <button id="acceptAllCookies" class="cookie-btn cookie-btn-primary">
+                    Alle akzeptieren
+                </button>
+                <button id="acceptSelectedCookies" class="cookie-btn cookie-btn-secondary">
+                    Auswahl speichern
+                </button>
+                <button id="rejectAllCookies" class="cookie-btn cookie-btn-tertiary">
+                    Alle ablehnen
+                </button>
+            </div>
+
+            <div class="cookie-consent-links">
+                <a href="#" class="open-datenschutz">Datenschutzerklärung</a>
+                <a href="#" class="open-impressum">Impressum</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- External JavaScript Files -->
+    <script src="assets/js/slider.js"></script>
+    <script src="assets/js/modals.js"></script>
+    <script src="assets/js/skills-data.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/cookie-consent.js"></script>
 </body>
 </html>
 
