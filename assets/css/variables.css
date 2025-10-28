@@ -1,0 +1,78 @@
+/* Global Variables and Base Styles */
+body {
+    background: #ffffff;
+    background-attachment: fixed;
+    color: #2c3e50;
+}
+
+/* Gradient Text Colors */
+.gradient-text {
+    color: #1e3a8a;
+}
+
+.gradient-text-alt {
+    color: #d4a574;
+}
+
+/* Glassmorphism Effects */
+.glassmorphism {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(30, 58, 138, 0.1);
+    box-shadow: 0 8px 32px rgba(30, 58, 138, 0.08);
+}
+
+.glassmorphism-hover {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(30, 58, 138, 0.15);
+    box-shadow: 0 12px 40px rgba(30, 58, 138, 0.12);
+}
+
+/* Glow Effects */
+.glow-effect {
+    box-shadow: 0 0 30px rgba(30, 58, 138, 0.2);
+}
+
+.glow-effect-pink {
+    box-shadow: 0 0 30px rgba(245, 0, 43, 0.2);
+}
+
+/* Animated Gradient */
+.animated-gradient {
+    background: #ffffff;
+    background-size: 400% 400%;
+}
+
+/* Hover Lift Effect */
+.hover-lift {
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.hover-lift:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* Modern Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f0f0f0;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1e3a8a;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #d4a574;
+}
+
+/* Ensure anchored sections are not hidden behind fixed nav */
+section[id] { 
+    scroll-margin-top: 6rem; 
+}

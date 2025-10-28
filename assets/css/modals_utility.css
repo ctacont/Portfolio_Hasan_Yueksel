@@ -1,0 +1,339 @@
+ /* Section Title Styling */
+        .hyMySectionTitle {
+            display: block;
+            width: 100%;
+            text-align: center;
+            color: #1e3a8a;
+            border-bottom: 1px solid rgb(30 58 138 / 30%);
+            padding-bottom: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        @keyframes blob {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+        }
+
+        .animate-blob { animation: blob 7s infinite; }
+        .animation-delay-2000 { animation-delay: 2s; }
+        .animation-delay-4000 { animation-delay: 4s; }
+
+        /* Scroll to Top Button */
+        #hyScrollToTop {
+            opacity: 0 !important;
+            visibility: hidden !important;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out !important;
+            pointer-events: none !important;
+        }
+
+        #hyScrollToTop.opacity-100 {
+            opacity: 1 !important;
+            visibility: visible !important;
+            pointer-events: auto !important;
+        }
+
+        #hyScrollToTop.opacity-0 {
+            opacity: 0 !important;
+            visibility: hidden !important;
+            pointer-events: none !important;
+        }
+
+        /* Tech Stack Tile Hover */
+        @keyframes glowing-shadow {
+            0% { background-color: inherit; }
+            50% { background-color: rgba(59, 130, 246, 0.15); }
+            100% { background-color: inherit; }
+        }
+
+        .tech-tile {
+            transition: all 0.3s ease;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .tech-tile-more-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 12px;
+            text-align: center;
+            font-size: 14px;
+            text-decoration: underline;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .tech-tile:hover .tech-tile-more-info {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .tech-tile .tech-tile-description {
+            transition: opacity 0.3s ease;
+            opacity: 1;
+        }
+
+        .tech-tile:hover .tech-tile-description {
+            opacity: 0;
+        }
+
+        /* Modal Styles */
+        .skill-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .skill-modal.active {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .skill-modal-content {
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .skill-modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #1e3a8a;
+            background: none;
+            border: none;
+            transition: color 0.3s ease;
+        }
+
+        .skill-modal-close:hover { color: #172554; }
+
+        .skill-modal-title {
+            color: #1e3a8a;
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            margin-top: 0;
+        }
+
+        .skill-modal-description {
+            color: #4b5563;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .skill-modal-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .skill-modal-list li {
+            color: #4b5563;
+            padding: 10px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .skill-modal-list li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #1e3a8a;
+            font-weight: bold;
+        }
+
+        .blur { filter: blur(3px); }
+
+        /* Impressum Modal Styles */
+        .impressum-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .impressum-modal.active {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .impressum-modal-content {
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+            animation: slideUp 0.3s ease;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .impressum-modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #1e3a8a;
+            background: none;
+            border: none;
+            transition: color 0.3s ease;
+        }
+
+        .impressum-modal-close:hover { color: #172554; }
+
+        .impressum-modal h2 {
+            color: #1e3a8a;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            margin-top: 0;
+        }
+
+        .impressum-modal p {
+            color: #4b5563;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .impressum-modal h3 {
+            color: #1e3a8a;
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .impressum-modal-address {
+            color: #4b5563;
+            line-height: 1.8;
+        }
+
+        /* Datenschutz Modal Styles */
+        .datenschutz-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .datenschutz-modal.active {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .datenschutz-modal-content {
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            max-width: 700px;
+            width: 90%;
+            position: relative;
+            animation: slideUp 0.3s ease;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .datenschutz-modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #1e3a8a;
+            background: none;
+            border: none;
+            transition: color 0.3s ease;
+        }
+
+        .datenschutz-modal-close:hover { color: #172554; }
+
+        .datenschutz-modal h2 {
+            color: #1e3a8a;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            margin-top: 0;
+        }
+
+        .datenschutz-modal h3 {
+            color: #1e3a8a;
+            font-size: 15px;
+            font-weight: bold;
+            margin-top: 18px;
+            margin-bottom: 10px;
+        }
+
+        .datenschutz-modal p {
+            color: #4b5563;
+            line-height: 1.7;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        .datenschutz-modal ul {
+            color: #4b5563;
+            line-height: 1.7;
+            margin-bottom: 12px;
+            font-size: 14px;
+            margin-left: 20px;
+            list-style: disc;
+        }
+
+        .datenschutz-modal ul li {
+            margin-bottom: 6px;
+        }
+
+        .datenschutz-modal a {
+            color: #1e3a8a;
+            text-decoration: underline;
+        }
+
+        .datenschutz-modal a:hover {
+            color: #172554;
+        }

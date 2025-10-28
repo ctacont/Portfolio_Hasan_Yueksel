@@ -1,0 +1,80 @@
+/* Tailwind Color Overrides */
+
+/* Yellow Color Overrides - Map to #f5002b (Red) */
+.text-yellow-700 {
+    color: #f5002b !important;
+}
+
+.bg-yellow-700 {
+    background-color: #f5002b !important;
+}
+
+.border-yellow-700 {
+    border-color: #f5002b !important;
+}
+
+.hover\:bg-yellow-700:hover {
+    background-color: #f5002b !important;
+}
+
+.hover\:text-yellow-700:hover {
+    color: #f5002b !important;
+}
+
+.text-yellow-800 {
+    color: #d40020 !important;
+}
+
+.hover\:text-yellow-800:hover {
+    color: #d40020 !important;
+}
+
+.bg-yellow-100 {
+    background-color: #ffe6eb !important;
+}
+
+.text-yellow-900 {
+    color: #b30019 !important;
+}
+
+.bg-yellow-200 {
+    background-color: #ffe6eb !important;
+}
+
+.border-yellow-200 {
+    border-color: #ffe6eb !important;
+}
+
+.bg-yellow-300 {
+    border-color: #ffd4de !important;
+}
+
+.text-yellow-100 {
+    color: #ffccd5 !important;
+}
+
+/* Green Color Overrides */
+.bg-green-200 {
+    background-color: #e0e7ff !important;
+}
+
+.text-green-700 {
+    color: #1e3a8a !important;
+}
+
+.bg-green-700 {
+    background-color: #1e3a8a !important;
+}
+
+.hover\:bg-green-700:hover,
+.hover\:bg-green-800:hover {
+    background-color: #172554 !important;
+}
+
+.text-green-100 {
+    color: #dbeafe !important;
+}
+
+.bg-green-900 {
+    background-color: #172554 !important;
+}

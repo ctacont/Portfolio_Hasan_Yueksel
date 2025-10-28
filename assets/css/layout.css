@@ -1,0 +1,49 @@
+/* Layout and Responsive Styles */
+
+/* Cleaner, flat design below the horizontal slider */
+/* Remove border radius across content sections (but keep hero rounded elements) */
+section:not(#home) .rounded,
+section:not(#home) .rounded-lg,
+section:not(#home) .rounded-xl,
+section:not(#home) .rounded-2xl,
+section:not(#home) .rounded-full {
+    border-radius: 0 !important;
+}
+
+/* Flatten cards/panels: no blur, minimal borders, no heavy shadows */
+section:not(#home) .glassmorphism,
+section:not(#home) .glassmorphism-hover {
+    background: #ffffff !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: 1px solid #e5e7eb !important;
+    box-shadow: none !important;
+}
+
+section:not(#home) .hover-lift,
+section:not(#home) .hover-lift:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+section:not(#home) .project-card {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+/* Remove decorative overlay for a cleaner look */
+section:not(#home) .project-card::after { 
+    display: none !important; 
+}
+
+/* Make badges square */
+section:not(#home) .rounded-full { 
+    border-radius: 0 !important; 
+}
+
+/* Square buttons */
+section:not(#home) .btn,
+section:not(#home) button,
+section:not(#home) a[role="button"] {
+    border-radius: 0 !important;
+}

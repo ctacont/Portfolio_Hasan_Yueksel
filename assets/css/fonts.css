@@ -1,0 +1,37 @@
+/* Exo Font Face Definitions */
+@font-face {
+    font-family: 'Exo';
+    src: url('../fonts/Exo.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Exo';
+    src: url('../fonts/Exo.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Exo';
+    src: url('../fonts/Exo.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Exo';
+    src: url('../fonts/Exo.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Global Font Family */
+* {
+    font-family: 'Exo', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Exo', sans-serif;
+}
